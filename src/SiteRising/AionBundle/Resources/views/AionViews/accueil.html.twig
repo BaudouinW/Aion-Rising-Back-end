@@ -1,0 +1,40 @@
+{% extends "SiteRisingAionBundle:AionViews:index.html.twig" %}
+
+{% block news %}
+<article class="content">
+<div class="page-title">Actualités récentes</div>
+
+        <section>
+                <div class="news-title">Maintenance hebdomadaire du 19.06.2014</div>
+                <div class="meta">
+                        Posté le <span class="meta-color">19 juin 2014</span> à <span class="meta-color">22:51</span> par <span class="meta-color">Thenice</span> dans <span class="meta-color">Annonce</span> 
+                </div>
+                <div class="img-news-categ">
+                        <img class="news-category" src="{{asset ('bundles/siterisingaion/images/news-category/maintenance.jpg') }}">
+                </div>
+
+                <p>Notez que le code CSS de ces mises en forme contient une grande quantité de commentaires. Si vous travaillez principalement en mode Création, jetez un coup d'œil au code afin d'obtenir des conseils sur l'utilisation du code CSS pour les mises en forme fixes. Vous pouvez supprimer ces commentaires avant de lancer votre site. Pour en savoir plus sur les techniques utilisées dans ces mises en forme CSS, consultez l'article suivant sur le Pôle de développement Adobe .</p>
+
+                <a href="#" class="read-more">Lire plus...</a>
+                <div class="clearfloat"></div>
+                <div class="divide"><img class="divide-news" src="{{ asset('bundles/siterisingaion/images/divide-news.png') }}" align="center"></div>
+        </section>
+        <section>
+                <div class="news-title">Ce qui vous attend sur Rising</div>
+                <div class="meta">
+                        Posté le <span class="meta-color">19 juin 2014</span> à <span class="meta-color">22:51</span> par <span class="meta-color">Thenice</span> dans <span class="meta-color">Annonce</span> 
+                </div>
+                <div class="img-news-categ">
+                        <img class="news-category" src="{{ asset('bundles/siterisingaion/images/news-category/announce.jpg') }}">
+                </div>
+
+                <p>Notez que le code CSS de ces mises en forme contient une grande quantité de commentaires. Si vous travaillez principalement en mode Création, jetez un coup d'œil au code afin d'obtenir des conseils sur l'utilisation du code CSS pour les mises en forme fixes. Vous pouvez supprimer ces commentaires avant de lancer votre site. Pour en savoir plus sur les techniques utilisées dans ces mises en forme CSS, consultez l'article suivant sur le Pôle de développement Adobe .</p>
+
+                <a href="#" class="read-more">Lire plus...</a>
+                <div class="clearfloat"></div>
+                <div class="divide"><img class="divide-news" src="{{ asset('bundles/siterisingaion/images/divide-news.png') }}" align="center"></div>
+        </section>
+
+        <a href="#" class="view-more">Afficher plus</a>
+</article><!-- end .content -->
+{% endblock %}

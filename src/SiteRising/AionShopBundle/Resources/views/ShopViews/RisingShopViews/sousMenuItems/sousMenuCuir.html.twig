@@ -1,0 +1,6 @@
+{% for type in emplacement %}
+    <li>
+        <a href="{{ path('emplacementStuffCuir', {'type' : type.id }) }}">{{ type.nom }}</a>
+    </li>
+{% endfor %}
+

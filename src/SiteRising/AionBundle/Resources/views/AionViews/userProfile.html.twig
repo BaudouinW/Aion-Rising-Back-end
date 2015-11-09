@@ -1,0 +1,270 @@
+{% extends "SiteRisingAionBundle:AionViews:index.html.twig" %}
+
+{% block profile %}
+{{ render(controller('RasFlashAlertBundle:Alert:displayAlerts')) }}
+<article class="content">
+<div class="page-title">Gestion de mon Compte</div>
+        <div class="img-page account">
+            <div class="welcome-message">
+                    Bienvenu(e),<br/>
+                    <span class="w-1-name">{{user.username}}</span>
+            </div>
+                <section class="account-p">
+                        <center>
+                                <div class="account-type">Rang du compte: <span class="acc-color">Daeva</span></div>
+                        </center>
+                        <div class="the-tab">
+                                <ul id="tabs">
+                                <li id="current"><a href="#" title="tab1">Mes Informations</a></li>
+                                    <li><a href="#" title="tab2">Mes Personnages</a></li>
+                                    <li><a href="#" title="tab3">Mes Paramètres</a></li>    
+                                </ul>
+
+                                <div id="t-content" class="t-c">
+                                        <div id="tab1" style="display: block;">
+                                                <span class="list-info">
+                                                        <img src="{{ asset('bundles/siterisingaion/images/icon-ip.png') }}"> Dernière Ip de connexion: <span>{{ ip }}</span><br/>
+                                                        <img src="{{ asset('bundles/siterisingaion/images/icon-email.png') }}"> Email du compte: <span>{{ user.email }}</span><br/>
+                                                        <img src="{{ asset('bundles/siterisingaion/images/icon-acc-status.png') }}"> Etat du compte: <span class="activated">Activé !</span>
+                                                </span>
+                                                <span class="d-avat">
+                                                        <img src="{{ asset('bundles/siterisingaion/images/default-avat.png') }}">
+                                                </span>
+                                                <span class="warn-info">
+                                                        Vous êtes tenu responsable de toute modifications sur votre compte, aucun membre du staff ne vous 
+                                                        demandera vos informations personnelles. <a href="http://forum.aion-rising.fr/index.php?/topic/709-r%C3%A8glement-en-jeu/">ICI</a> La charte à lire.			
+                                                </span>
+
+                                        </div>
+                                    <div id="tab2" style="display: none;">
+                                                <center>
+                                                        <span class="list-characters" style="width:660px;">
+                                                                <table>
+                                                                        <tr> 
+                                                                                <td>
+                                                                                        ..::..
+                                                                                </td>
+                                                                                <td >
+                                                                                        Nom
+                                                                                </td>
+                                                                                <td >
+                                                                                        Niveau
+                                                                                </td>
+                                                                                <td>
+                                                                                        Race
+                                                                                </td>																
+                                                                                <td>
+                                                                                        Sexe
+                                                                                </td>
+                                                                                <td>
+                                                                                        Classe
+                                                                                </td>
+                                                                                <td>
+                                                                                        Points PvP
+                                                                                </td>
+                                                                                <td>
+                                                                                        Points Bg
+                                                                                </td>
+                                                                                <td>
+                                                                                        Points FFa
+                                                                                </td>																															
+                                                                        </tr>
+                                                                        <tr>
+                                                                                <td >
+                                                                                        1
+                                                                                </td>
+                                                                                <td>
+                                                                                        Alibaba
+                                                                                </td>
+                                                                                <td>
+                                                                                        65
+                                                                                </td>
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/race_0.gif')}}">
+                                                                                </td>																
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/male.png') }}">
+                                                                                </td>
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/icon_emblem_bard.png') }}">
+                                                                                </td>
+                                                                                <td>
+                                                                                        65000
+                                                                                </td>
+                                                                                <td>
+                                                                                        650
+                                                                                </td>
+                                                                                <td>
+                                                                                        6504
+                                                                                </td>																														
+                                                                        </tr>														
+                                                                        <tr>
+                                                                                <td >
+                                                                                        2
+                                                                                </td>
+                                                                                <td>
+                                                                                        Zougataga
+                                                                                </td>
+                                                                                <td>
+                                                                                        65
+                                                                                </td>
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/race_0.gif') }}">
+                                                                                </td>																
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/male.png') }}">
+                                                                                </td>																
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/icon_emblem_gunner.png') }}">
+                                                                                </td>
+                                                                                <td>
+                                                                                        65000
+                                                                                </td>
+                                                                                <td>
+                                                                                        650
+                                                                                </td>
+                                                                                <td>
+                                                                                        6504
+                                                                                </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                                <td >
+                                                                                        3
+                                                                                </td>
+                                                                                <td>
+                                                                                        MrFree
+                                                                                </td>
+                                                                                <td>
+                                                                                        65
+                                                                                </td>
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/race_0.gif') }}">
+                                                                                </td>																
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/male.png') }}">
+                                                                                </td>																
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/icon_emblem_rider.png') }}">
+                                                                                </td>
+                                                                                <td>
+                                                                                        65000
+                                                                                </td>
+                                                                                <td>
+                                                                                        650
+                                                                                </td>
+                                                                                <td>
+                                                                                        6504
+                                                                                </td>
+                                                                        </tr>	
+                                                                        <tr>
+                                                                                <td >
+                                                                                        4
+                                                                                </td>
+                                                                                <td>
+                                                                                        JeanMouloud
+                                                                                </td>
+                                                                                <td>
+                                                                                        65
+                                                                                </td>
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/race_0.gif') }}">
+                                                                                </td>																
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/male.png') }}">
+                                                                                </td>																
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/icon_emblem_knight.png') }}">
+                                                                                </td>
+                                                                                <td>
+                                                                                        65000
+                                                                                </td>
+                                                                                <td>
+                                                                                        650
+                                                                                </td>
+                                                                                <td>
+                                                                                        6504
+                                                                                </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                                <td >
+                                                                                        5
+                                                                                </td>
+                                                                                <td>
+                                                                                        Robert
+                                                                                </td>
+                                                                                <td>
+                                                                                        65
+                                                                                </td>
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/race_0.gif') }}">
+                                                                                </td>																
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/male.png') }}">
+                                                                                </td>								
+                                                                                <td>
+                                                                                        <img src="{{ asset('bundles/siterisingaion/images/class/icon_emblem_bard.png') }}">
+                                                                                </td>
+                                                                                <td>
+                                                                                        65000
+                                                                                </td>
+                                                                                <td>
+                                                                                        650
+                                                                                </td>
+                                                                                <td>
+                                                                                        6504
+                                                                                </td>
+                                                                        </tr>																												
+                                                                </table>
+                                                        </span>
+                                                </center>										    	
+                                    </div>
+                                    <div id="tab3" style="display: none;">
+                                                <span class="password-e block">
+                                                <span class="title-p-c block" align="center">Modification du mot de passe</span>
+                                                     <form class="register-f" action="{{ path('fos_user_change_password') }}" {{ form_enctype(form) }} method="POST">
+                                                                <span class="password-label-title block">{{form_label(form.current_password) }}</span><br/>
+                                                                <span class="r-input block"> 
+                                                                    {{form_widget(form.current_password, {'attr': {'class' : 'inner-password-input', 'placeholder' : 'Votre ancien mot de passe...', 'maxlenght' : '16'}})}}
+                                                                    {{form_errors(form.current_password) }}
+                                                                </span>
+
+                                                                <span class="password-label-title block">{{form_label(form.new.first) }}</span><br/>
+                                                                <span class="r-input block"> 
+                                                                    {{form_widget(form.new.first, {'attr': {'class' : 'inner-password-input', 'placeholder' : 'Votre mot de passe...', 'maxlenght' : '23'}})}}
+                                                                    {{form_errors(form.new.first) }}
+                                                                </span>
+
+                                                                <span class="password-label-title block">{{ form_label(form.new.second) }}</span><br/>
+                                                                <span class="r-input block">
+                                                                    {{form_widget(form.new.second, {'attr': {'class' : 'inner-password-input', 'placeholder' : 'Confirmez le mot de passe...', 'maxlenght' : '23'}})}}
+                                                                    {{form_errors(form.new.second) }}
+                                                                </span><br/>
+
+                                                                <button name="register-process" class="register-process">Envoyer</button>
+                                                           {{ form_rest(form) }}
+                                                        </form>   
+                                                </span>									    	
+
+                                    </div>
+                                </div>											
+                        </div>
+
+                </section>
+        </div>
+
+</article><!-- end .content -->
+<script>
+$(document).ready(function() {
+	$("#tabs li:first").attr("id","current"); // Activate first tab
+	$("#content div:first").fadeIn(); // Show first tab content
+    
+    $('#tabs a').click(function(e) {
+        e.preventDefault();        
+        $("#t-content div").hide(); //Hide all content
+        $("#tabs li").attr("id",""); //Reset id's
+        $(this).parent().attr("id","current"); // Activate this
+        $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
+    });
+})();
+</script>
+{% endblock %}

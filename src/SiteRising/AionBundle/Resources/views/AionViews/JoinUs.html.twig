@@ -1,0 +1,53 @@
+{% extends "SiteRisingAionBundle:AionViews:index.html.twig" %}
+
+
+{% block nousRejoindre %}
+<article class="content">
+<div class="page-title">Square des nouveaux Daevas</div>
+        <div class="img-page joinus">
+                <div class="r-cadre-infos">
+                        <div class="c-title">Premier pas sur le serveur Rising ?</div>
+                        <div class="c-desc">
+                                Sachez qu'ici tout est possible à l'intrépide,
+                                il vous suffit de suivre le guide.<br/>
+                                Si vous n'avez pas encore de compte, c'est <a href="{{path ('fos_user_registration_register')}}">ICI</a>.
+                        </div>
+                </div>
+                <section class="p-cont">
+                        <div class="step">									
+                                <div class="step-title"> <span class="numb">1</span> Installation du client</div>
+                                <div class="clearfloat"></div>
+                                <div class="step-cont">
+                                        <div class="arrow clearfloat">a</div> Télécharger le jeu via le site officiel <a href="http://en.aion.gameforge.com/website/download/">GameForge</a>.<br/>
+                                        <div class="arrow clearfloat">a</div> Une fois téléchargé, lancez le et attendez la fin de l'installation.
+                                </div>
+                        </div>
+                        <div class="step">									
+                                <div class="step-title"> <span class="numb">2</span> Téléchargement du jeu</div>
+                                <div class="clearfloat"></div>
+                                <div class="step-cont">
+                                        <div class="arrow clearfloat">a</div> Lancez le launcher GameForge Live une fois installé.<br/>
+                                        <div class="arrow clearfloat">a</div> Séléctionnez Aion et cliquez sur JOUER.<br/>
+                                        <div class="arrow clearfloat">a</div> Cliquez sur le bouton orange "Lancer les mises à jour". Attendez la fin du téléchargement.
+                                </div>
+                        </div>
+                        <div class="step">									
+                                <div class="step-title"> <span class="numb">3</span> Installation du launcher Rising</div>
+                                <div class="clearfloat"></div>
+                                <div class="step-cont">
+                                        <div class="arrow clearfloat">a</div> Téléchargé le launcher Rising <a href="#">ICI</a>.<br/>
+                                        <div class="arrow clearfloat">a</div> Une fois téléchargé, veuillez le mettre à cette emplacement:<br/>
+                                        "C:\Program Files (x86)\GameforgeLive\Games\FRA_fr\Aion\Download").<br/>
+                                        <div class="arrow clearfloat">a</div> Une fois mis en place, lancez ce dernier.
+
+                                </div>
+                        </div><br/>									
+                        <div class="endless-desc">
+                                Votre quête peut maintenant commencer. Faites preuve de bravoure, d'intelligence et d'héroïsme.<br/>
+                                Préparez-vous à vivre une aventure hors du commun : les Rising n'attendent que vous !
+                        </div>
+                </section>
+        </div>
+
+</article><!-- end .content -->
+{% endblock %}

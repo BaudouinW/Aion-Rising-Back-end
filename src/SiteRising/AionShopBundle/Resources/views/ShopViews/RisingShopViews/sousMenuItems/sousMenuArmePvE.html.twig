@@ -1,0 +1,6 @@
+{% for arme in CategorieArme %}
+    <li>
+        <a href="{{ path('armePvE', {'arme' : arme.nom }) }}">{{ arme.nom }}</a>
+    </li>
+{% endfor %}
+

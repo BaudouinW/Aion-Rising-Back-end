@@ -1,0 +1,226 @@
+Players:
+    type: entity
+    table: players
+    indexes:
+        account_id:
+            columns:
+                - account_id
+    uniqueConstraints:
+        name_unique:
+            columns:
+                - name
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        accountId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: account_id
+        accountName:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            column: account_name
+        exp:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+        recoverexp:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+        x:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+        y:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+        z:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+        heading:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        worldId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: world_id
+        worldOwner:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+            column: world_owner
+        gender:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+        race:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+        playerClass:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: player_class
+        creationDate:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: creation_date
+        deletionDate:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: deletion_date
+        lastOnline:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: last_online
+        questExpands:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+            column: quest_expands
+        npcExpands:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+            column: npc_expands
+        advancedStigmaSlotSize:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+            column: advanced_stigma_slot_size
+        warehouseSize:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+            column: warehouse_size
+        mailboxLetters:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+            column: mailbox_letters
+        titleId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '-1'
+            column: title_id
+        bonusTitleId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '-1'
+            column: bonus_title_id
+        dp:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+        soulSickness:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+            column: soul_sickness
+        reposteEnergy:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+            column: reposte_energy
+        bgPoints:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+            column: bg_points
+        online:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+        note:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        mentorFlagTime:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+            column: mentor_flag_time
+        initialGamestats:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+            column: initial_gamestats
+        lastTransferTime:
+            type: decimal
+            nullable: false
+            precision: 20
+            scale: 0
+            comment: ''
+            default: '0'
+            column: last_transfer_time
+    lifecycleCallbacks: {  }

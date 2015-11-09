@@ -1,0 +1,6 @@
+{% extends 'AionShopBundle::ShopRising.html.twig' %}
+
+{% block accueil %}
+{{ render(controller('RasFlashAlertBundle:Alert:displayAlerts')) }}
+{% endblock %}
+    

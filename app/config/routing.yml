@@ -1,0 +1,16 @@
+aion_server:
+    resource: "@AionServerBundle/Resources/config/routing.yml"
+    prefix:   /
+
+aion_shop:
+    resource: "@AionShopBundle/Resources/config/routing.yml"
+    prefix:   /
+
+site_rising_aion:
+    resource: "@SiteRisingAionBundle/Resources/config/routing.yml"
+    prefix:   /
+
+site_rising_user:
+    resource: "@SiteRisingUserBundle/Resources/config/routing.yml"
+    prefix:   /siteAionRising
+

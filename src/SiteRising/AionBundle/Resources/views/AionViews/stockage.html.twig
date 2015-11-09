@@ -1,0 +1,79 @@
+<form class="register-f" action="" method="post" {{ form_enctype(form) }}>
+                                    <div class="error">
+                                        {{ form_errors(form) }}
+                                    </div>
+                                        <span class="register-label-title">{{ form_label(form.username)}}</span><br/>
+                                        <div class="r-input">
+                                            {{form_widget(form.username) }}
+                                            {{form_errors(form.username) }}
+                                        </div>
+
+                                        <span class="register-label-title">{{form_label(form.password) }}</span><br/>
+                                        <div class="r-input">
+                                            {{form_widget(form.password) }}
+                                            {{form_errors(form.password) }}
+                                        </div>
+
+                                        <span class="register-label-title">{{form_label(form.password-confirm) }}</span><br/>
+                                        <div class="r-input">
+                                            {{form_widget(form.password-confirm) }}
+                                            {{form_errors(form.password-confirm) }}
+                                        </div>
+
+                                        <span class="register-label-title">{{form_label(form.email) }}</span><br/>
+                                        <div class="r-input">
+                                            {{form_widget(form.email) }}
+                                            {{form_errors(form.email) }}
+                                        </div>
+                                        
+                                        
+                                        
+                                       
+                                        <form class="m-login" action="">
+										<span class="m-input-title">Identifiant</span><br/>
+										<div class="m-input"> <input name="name" type="text" class="inner-input" placeholder="Votre identifiant..." maxlength="23"></div>
+										<span class="m-input-title">Mot de Passe</span><br/>
+										<div class="m-input"> <input name="password" type="password" class="inner-input" placeholder="Votre mot de passe..." maxlength="23"></div><br/>
+										<a href="#" class="forgotten-pass">Mot de passe oublié ?</a>
+										<button name="login-process" class="login-process">go</button>
+									</form>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        <div>
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    <a href="{{ path('fos_user_profile_show') }}">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</a> |
+    <a href="{{ path('fos_user_security_logout') }}">
+        {{ 'layout.logout'|trans([], 'FOSUserBundle') }}
+    </a>
+{% else %}
+    <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans([], 'FOSUserBundle') }}</a> |
+    <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans([], 'FOSUserBundle') }}</a>
+{% endif %}
+</div>
+
+{% for type, messages in app.session.flashbag.all() %}
+    {% for key, message in messages %}
+        <div class="flash-{{ type }}">
+            {{ message|trans({}, 'FosUserBundle') }}
+        </div>
+    {% endfor %}
+{% endfor %}
+                                        
+                                        <script>
+$(document).ready(function() {
+	$("#t-content div").hide(); // Initially hide all content
+	$("#tabs li:first").attr("id","current"); // Activate first tab
+	$("#content div:first").fadeIn(); // Show first tab content
+    
+    $('#tabs a').click(function(e) {
+        e.preventDefault();        
+        $("#t-content div").hide(); //Hide all content
+        $("#tabs li").attr("id",""); //Reset id's
+        $(this).parent().attr("id","current"); // Activate this
+        $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
+    });
+})();
+</script>

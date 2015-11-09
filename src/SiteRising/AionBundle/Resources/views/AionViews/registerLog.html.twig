@@ -1,0 +1,18 @@
+{% extends 'SiteRisingAionBundle:AionViews:index.html.twig' %}
+
+{% block registerLog %}
+<body>				
+<article class="content">
+<div class="page-title">Square des inscriptions</div>
+        <div class="img-page">
+                <section class="p-cont">									
+                    <p><span class="w-message"> Vous êtes connecté en tant que <font color="yellow">{{ user.username }}</font>.</span></br>
+                       Pour avoir accès au formulaire d'inscription, merci de vous déconnecter de votre compte actuel.</br></br>
+                        
+                        Bon jeu sur Aion Rising.
+                    </p>
+                </section>
+        </div>
+
+</article><!-- end .content -->	
+{% endblock %}

@@ -1,0 +1,37 @@
+<div class="register-e">
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="register-f" id='form_register'>
+    <div class="error">
+     {{ form_errors(form) }}
+    </div>
+    <input type="hidden" name="form[_token]" value="{{ form._token.vars.value }}" />
+        <span class="register-label-title">{{form_label(form.username)}}</span></br>
+    <div class="r-input">
+        {{form_widget(form.username, {'attr': {'class' : 'inner-register-input', 'placeholder' : 'Votre identifiant...', 'maxlenght' : '16'}})}}
+        {{form_errors(form.username) }}
+    </div>
+        <span class="register-label-title">{{form_label(form.plainPassword.first) }}</span><br/>
+        <div class="r-input">
+            {{form_widget(form.plainPassword.first, {'attr': {'class' : 'inner-register-input', 'placeholder' : 'Votre mot de passe...', 'maxlenght' : '23'}})}}
+            {{form_errors(form.plainPassword.first) }}
+        </div>
+        <span class="register-label-title">{{form_label(form.plainPassword.second) }}</span></br>
+        <div class="r-input">
+            {{form_widget(form.plainPassword.second, {'attr' : {'class' : 'inner-register-input', 'placeholder' : 'Confirmez le mot de passe...', 'maxlenght' : '23'}})}}
+            {{form_errors(form.plainPassword.second) }}
+        </div>
+        <span class="register-label-title">{{form_label(form.email) }}</span><br/>
+        <div class="r-input">
+            {{form_widget(form.email, {'attr': {'class' : 'inner-register-input', 'placeholder' : 'Votre email...', 'maxlenght' : '30'}})}}
+            {{form_errors(form.email) }}
+        </div></br>
+        <div class="r-input">
+            {{form_widget (form.captcha, {'attr': {'class' : 'inner-register-input', 'placeholder' : 'Saisissez le captcha', 'maxlenght' : '30' }})}}
+            {{form_errors (form.captcha) }}
+          
+        </div></br>
+    <div>
+        <input type="submit"  name="register-process" class="register-process" ></input>
+    </div>
+   {{ form_rest(form) }}
+</form>
+</div>

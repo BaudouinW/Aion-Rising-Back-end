@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="content-style-type" content="text/css">
+        <meta property="og:title" content="Aion Rising - Serveur Privé Aion">
+        <meta name="revisit-after" content="5 Days">
+        <meta name="Description" content="Venez vivre des moments fabuleux grâce à notre serveur privé Aion ! On attend que vous !">
+        <meta name="Abstract" content="Venez vivre des moments fabuleux grâce à notre serveur privé Aion ! On attend que vous !">
+        <meta name="Keywords" content="Serveur, Aion, privé, français, francais, gratuit, free, mmorpg">
+        <meta name="author" content="TheNice">
+        <meta name="subject" content="Aion Serveur">
+        <meta name="Classification" content="Aion serveur gratuit">
+        <meta name="publisher" content="Aion-fr - www.aion-rising.fr">
+        <meta name="distribution" content="Global">
+        <meta name="resource-type" content="document">
+        <meta name="copyright" content="2012, 2014, Aion Rising, L'Equipe Aion Rising">
+        <meta name="robots" content="index, follow, all">
+        <meta name="identifier-url" content="http://www.aion-rising.fr">
+        <meta http-equiv="X-UA-Compatible" content="iE=EmulateiE7">
+        <title>{% block title %}Aion Rising | Mist of Nightmare{% endblock %}</title>
+        <link href="{{ asset('bundles/siterisingaion/css/index.css') }}" rel="stylesheet" type="text/css" >
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" href="{{ asset('bundles/siterisingaion/themes/default/default.css') }}" type="text/css" media="screen" />
+        <link rel="stylesheet" href="{{ asset('bundles/siterisingaion/css/nivo-slider.css') }}" type="text/css" media="screen" />
+	{% javascripts '@SiteRisingAionBundle/Resources/public/js/jquery-1.9.1.min.js' %}<script src="{{ asset('http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js') }}"></script>{% endjavascripts %}
+    {% javascripts '@SiteRisingAionBundle/Resources/public/js/jquery.nivo.slider.js' %}<script type="text/javascript" src="{{ asset('bundles/siterisingaion/js/jquery.nivo.slider.js') }}"></script>{% endjavascripts %}
+	{% javascripts '@SiteRisingAionBundle/Resources/public/js/voting_timer_rpg.js' %}<script type="text/javascript" src="{{ asset('bundles/siterisingaion/js/voting_timer_rpg.js') }}"></script>{% endjavascripts %}
+	{% javascripts '@SiteRisingAionBundle/Resources/public/js/voting_timer_gowonda.js' %}<script type="text/javascript" src="{{ asset('bundles/siterisingaion/js/voting_timer_gowonda.js') }}"></script>{% endjavascripts %}
+        <script type="text/javascript">
+            $(window).load(function() {
+                $('#slider').nivoSlider({
+                    effect: 'fade', // Specify sets like: 'fold,fade,sliceDown'
+                    slices: 15, // For slice animations
+                    boxCols: 8, // For box animations
+                    boxRows: 4, // For box animations
+                    animSpeed: 500, // Slide transition speed
+                    pauseTime: 5000, // How long each slide will show
+                    startSlide: 0, // Set starting Slide (0 index)
+                    directionNav: true, // Next & Prev navigation
+                    controlNav: false, // 1,2,3... navigation
+                    controlNavThumbs: false, // Use thumbnails for Control Nav
+                    pauseOnHover: true, // Stop animation while hovering
+                    manualAdvance: false, // Force manual transitions
+                    prevText: 'Prev', // Prev directionNav text
+                    nextText: 'Next', // Next directionNav text
+                    randomStart: false, // Start on a random slide
+                    beforeChange: function() {
+                    }, // Triggers before a slide transition
+                    afterChange: function() {
+                    }, // Triggers after a slide transition
+                    slideshowEnd: function() {
+                    }, // Triggers after all slides have been shown
+                    lastSlide: function() {
+                    }, // Triggers when last slide is shown
+                    afterLoad: function() {
+                    }         // Triggers when slider has loaded
+                });
+
+
+            });
+        </script>
+
+    </head>
+
+    <body>
+        <div class="owner">
+            <div class="container">
+                <div class="top-menu-left">
+                    <nav class="navigation-left">
+                        <a href="{{ path('site_rising_accueil')}}">Accueil</a>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <a href="{{ path ('site_rising_accueil') }}">S'inscrire</a>
+                    {% else %}
+                        <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
+                    {% endif %}
+                        <a href="#">Nous rejoindre</a>
+                    </nav>
+                </div>
+                <div class="top-menu-right">
+                    <nav class="navigation-right">
+                        <a href="#">Classement</a>
+                        <a href="http://forum.aion-rising.fr/">Forum</a>
+                        <a href="#">Equipe</a>
+                    </nav>
+                </div>
+                <header>
+                    <div class="slide">
+                        <div class="slider-wrapper theme-default">
+                            <div id="slider" class="nivoSlider">
+                                <img src="{{ asset('bundles/siterisingaion/images/slider/bg1.jpg') }}" title="#htmlcaption1" />
+                                <img src="{{ asset('bundles/siterisingaion/images/slider/bg1.jpg') }}" title="#htmlcaption2" />
+                            </div>
+                            <div id="htmlcaption1" class="nivo-html-caption">
+                                <span class="title-flash-news">Ouverture du serveur Aion-Rising</span><br>
+                                Le commencement d’une nouvelle ère d’avalanche ! 
+                            </div>
+                            <div id="htmlcaption2" class="nivo-html-caption">
+                                <span class="title-flash-news">Ouverture du Aion-Rising</span><br>
+                                Le commencement d’une nouvelle ère d’avalanche !
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="download-btn">
+                        <a href="{{ path('site_rising_joinUs') }}" class="second-btn-play">Telechargement</a>
+                    </div>
+                </header>           
+            {% block page %}
+            {%endblock %}   
+                <footer role="contentinfo"></footer>
+            </div><!-- end .container -->
+        </div><!-- end .owner -->
+        <div class="bg-foot"></div>
+    </body>
+</html>

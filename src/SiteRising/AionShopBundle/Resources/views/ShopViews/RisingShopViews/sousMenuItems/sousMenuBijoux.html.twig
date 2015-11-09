@@ -1,0 +1,6 @@
+{% for bijoux in EmplacementBijoux %}
+    <li>
+        <a href="{{ path('emplacementBijoux', {'bijoux' : bijoux.id }) }}">{{ bijoux.nom }}</a>
+    </li>
+{% endfor %}
+

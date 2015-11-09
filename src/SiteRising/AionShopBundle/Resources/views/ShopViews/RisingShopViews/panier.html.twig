@@ -1,0 +1,53 @@
+{% extends 'AionShopBundle::ShopRising.html.twig' %}
+
+{% block panier %}
+<div class="head-item-view">
+    <div class="search">
+        <form>
+            <label>Recherche: </label>
+            <input class="ch-search" type="text" name="ch-search" placeholder="Tapez votre inconnu..." maxlength="23">
+        </form>	
+    </div>
+</div>
+<section>
+    <div class="head-tab">
+        <nav>
+            <li class="item-name">Nom de l'item</li>
+            <li class="item-level">Quantité</li>
+            <li class="item-price">Prix</li>
+            <li class="item-action">Action</li>	
+        </nav>
+    </div>
+    {% if Items|length == 0 %}
+    <tr>
+        <td colspan="4"><center>Aucun item dans votre panier</center></td>
+    </tr>
+   {% endif %}
+    
+    {% for item in Items %}
+    <form action="{{ path('ajouter', { 'id' : item.id }) }}" method="get">
+    <div class="item-list">
+        <div class="item-pic"><img src="{{ asset('bundles/aionshop/image/img-unknow-item.png') }}"></div>
+        <span class="item-v-name">
+            <div class="item-text-n">
+                <h3 class="eternal">{{ item.nom }}</h3>
+                <div class="desc">
+                    Plus d'information sur l'item <a href="{{ item.lien }}"> ici</a>.
+                </div>											
+            </div>
+        </span>
+        <span class="item-v-level">
+            {{ item.packet }}
+        </span>
+        
+        <span class="item-v-action">
+            <div class="item-text-a">
+                <a href="{{ path('supprimer', { 'id' : item.id} )}}"<button class="btn-add" name="btn-add">Supprimer</button></a>
+            </div>
+        </span>
+    </div>
+</form>
+    {% endfor %}<!--repeat-->
+    <div class="clearfloat"></div> <!--A ne pas supprimer-->
+</section>
+{% endblock %}

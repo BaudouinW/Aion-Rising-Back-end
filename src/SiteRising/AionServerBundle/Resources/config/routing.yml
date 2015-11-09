@@ -1,0 +1,3 @@
+shop:
+    path:     /shop/accueil
+    defaults: { _controller: AionServerBundle:Players:personnage }

@@ -1,0 +1,17 @@
+{% if error %}
+<div><font color="red" size="1px">{{ error|trans({},'FOSUserBundle')}}</font></div>
+{% endif %}
+<form action="{{ path("fos_user_security_check") }}" method="post" class="m-login">
+    <input type="hidden" name="_csrf_token" value="{{ fos_csrf_provider.generateCsrfToken('authenticate') }}" />
+
+    <span class="m-input-title">Identifiant</span><br/>
+    <div class="m-input"><input type="text" class="inner-input" placeholder="Votre identifiant..." maxlength="23" id="username" name="_username" value="{% if last_username is defined %}{{ last_username }}{% endif %}" required="required" /></div>
+
+    <span class="m-input-title">Mot de Passe</span><br/>
+    <div class="m-input"><input id="password" name="_password" type="password" class="inner-input" placeholder="Votre mot de passe..." maxlength="23" required="required" /></div></br>
+
+    <!--<a href="{{ path('fos_user_resetting_request') }}" class="forgotten-pass">Mot de passe oublié ?</a>-->
+  
+    <input type="submit" id="_submit" name="login-process" class="login-process" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+</form>
+

@@ -1,0 +1,165 @@
+{% extends 'SiteRisingAionBundle::layout.html.twig' %}
+
+{% block page %}
+<div class="top-cont"></div>
+			<div class="page-repeat">
+				<div class="page-head">
+					<div class="page-foot">
+						<div class="sidebar">
+							<aside>
+								<div class="membership">
+								<span class="m-title">Menu Membre</span>
+                                                                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                                                        {%include 'SiteRisingUserBundle::profile.html.twig'%}
+                                                                    {%else%}
+									{%include 'SiteRisingUserBundle::connexion.html.twig'%}
+                                                                    {%endif%}
+								</div>
+								<div class="sdb-divide">Divide</div><!-- barre de separation-->
+								<div class="sdb-r-title">STATISTIQUE DU SERVEUR</div>
+								<p class="stats-server">
+									Serveur de jeu : <span class="online-s">En ligne</span></br>
+									UpTime : <span class="online-s">8heure(s) 12min </span></br>
+									TeamSpeak : <span class="online-s">En ligne</span></br>
+								</p>
+								<span class="online-title">Joueur(s) en ligne</span>
+								<div class="online-players">
+									<div class="inner-progress" style="width:125px;"></div><!-- Taille de la jauge de progression 250px maximum-->
+									<span class="count-online">250/500</span>
+								</div>
+								<div class="sdb-divide">Divide</div><!-- barre de separation-->
+								<div class="sdb-r-title">Classement top 5</div>
+
+								<div class="top-rank" style="width:265px;">
+									<table >
+										<tr> 
+											<td>
+												Rang
+											</td>
+											<td >
+												Joueur
+											</td>
+											<td>
+												Classe
+											</td>
+											<td>
+												Points
+											</td>
+										</tr>
+										<tr>
+											<td >
+												1
+											</td>
+											<td>
+												Tintin
+											</td>
+											<td>
+												<img src="{{ asset('bundles/siterisingaion/images/class/icon_emblem_bard.png') }}">
+											</td>
+											<td>
+												65000
+											</td>
+										</tr>
+
+										<tr>
+											<td >
+												2
+											</td>
+											<td>
+												Zoumzo
+											</td>
+											<td>
+												<img src="{{ asset('bundles/siterisingaion/images/class/icon_emblem_gunner.png') }}">
+											</td>
+											<td>
+												64000
+											</td>
+										</tr>
+										<tr>
+											<td >
+												3
+											</td>
+											<td>
+												Tinzo
+											</td>
+											<td>
+												<img src="{{ asset('bundles/siterisingaion/images/class/icon_emblem_rider.png') }}">
+											</td>
+											<td>
+												63000
+											</td>
+										</tr>	
+										<tr>
+											<td >
+												4
+											</td>
+											<td>
+												Sinza
+											</td>
+											<td>
+												<img src="{{ asset('bundles/siterisingaion/images/class/icon_emblem_knight.png') }}">
+											</td>
+											<td>
+												62000
+											</td>
+										</tr>
+										<tr>
+											<td >
+												5
+											</td>
+											<td>
+												Intiz
+											</td>
+											<td>
+												<img src="{{ asset('bundles/siterisingaion/images/class/icon_emblem_bard.png')}}">
+											</td>
+											<td>
+												61000
+											</td>
+										</tr>																												
+									</table>
+								</div>
+
+								<div class="sdb-r-title" id="vote">Square des votes</div>
+                                                                <nav>
+                                                                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                                                    {%include 'SiteRisingAionBundle:AionViews:VotedSquare.html.twig'%}
+                                                                    {% else %}
+                                                                    <p><font color="white">Vous devez vous inscrire pour avoir accès à la section de vote.Merci</font></p>
+                                                                    {% endif %}
+                                                                    <div class="clearfloat"></div>
+
+                                                                </nav>
+								<span class="vote-info">
+									Vote rpg toutes les 1h</br> Vote Gowonda toutes les 2h
+								</span>
+								<div class="sdb-divide">Divide</div><!-- barre de separation-->
+								
+
+
+							</aside>
+
+						</div><!-- end .sidebar -->
+                                               {% block register %}
+                                               {% endblock %}
+                                               {% block news %}
+                                               {% endblock %}
+                                               {% block profile %}
+                                               {% endblock %}
+                                               {% block nousRejoindre %}
+                                               {% endblock %}
+                                               {% block confirmeRegister %}
+                                               {% endblock %}
+                                               {% block registerLog %}
+                                               {% endblock %}
+                                               {% block forgetPassword %}
+                                               {% endblock %}
+                                               {% block newPassword %}
+                                               {% endblock %}
+						<div class="clearfloat"></div>
+					</div><!-- end .page-foot-->
+				</div><!-- end .page-head-->
+			</div><!-- end .page-repeat-->
+{% endblock %}
+
+

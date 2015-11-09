@@ -1,0 +1,66 @@
+{% extends 'AionShopBundle::ShopRising.html.twig' %}
+
+{% block items %}
+{{ render(controller('RasFlashAlertBundle:Alert:displayAlerts')) }}
+<div class="head-item-view">
+    <div class="search">
+        <form>
+            <label>Personnage :</label>
+            <select id="select-perso">
+                <option selected="selected" value="0">Choississez le personnage</option>
+                {% for perso in players %}
+                <option value="{{ perso.id }}">{{ perso.name }}</option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+</div>
+<section>
+    <div class="head-tab">
+        <nav>
+            <li class="item-name">Nom de l'item</li>
+            <li class="item-level">Quantité</li>
+            <li class="item-price">Prix</li>
+            <li class="item-action">Action</li>
+        </nav>
+    </div>
+    {% if items|length != 0 %}
+    {% for item in items %}
+    <div class="item-list">
+        <div class="item-pic"><img src="{{ asset('bundles/aionshop/image/img-unknow-item.png') }}"></div>
+        <span class="item-v-name">
+            <div class="item-text-n">
+                <h3 class="eternal">{{ item.nom }}</h3>
+                <div class="desc">
+                    Plus d'information sur l'item <a href="{{ item.lien }}"> ici</a>.
+                </div>
+            </div>
+        </span>
+        <span class="item-v-level">
+         {{ item.packet }}
+        </span>
+        <span class="item-v-price">
+            <div class="item-text-p">
+                <img src="{{ asset('bundles/aionshop/image/money/rggold.png') }}"> <span class="rgcolor">Rising Gold:</span>  {{ item.prix }} <br/>
+                <!--<img src="{{ asset('bundles/aionshop/image/money/pvp-gold.png') }}"> <span class="pgcolor">PvP Gold:</span> 250 <br/>
+                <img src="{{ asset('bundles/aionshop/image/money/bg-gold.png') }}"> <span class="bgcolor">BG Gold:</span> 250 <br/>
+                <img src="{{ asset('bundles/aionshop/image/money/ffa-gold.png') }}"> <span class="fgcolor">FFA Gold:</span> 250 <br/> -->
+            </div>
+        </span>
+        <span class="item-v-action">
+            <div class="item-text-a">
+                <a href="{{ path('acheter', { 'item' : item.id, 'perso' : '_'}) }}"><button class="btn-add" name="btn-add" ></button></a>
+            </div>
+        </span>
+    </div>
+    {% endfor %}<!--repeat-->
+    <div class="clearfloat"></div> <!--A ne pas supprimer-->
+    <div class="paginate">
+        {{ knp_pagination_render(items) }}
+    </div>
+    {% else %}
+    <center>Aucun item</center>
+    {% endif %}
+
+</section>
+{% endblock %}

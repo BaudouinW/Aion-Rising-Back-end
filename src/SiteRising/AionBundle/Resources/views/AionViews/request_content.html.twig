@@ -1,0 +1,29 @@
+{% extends 'SiteRisingAionBundle:AionViews:index.html.twig' %}
+
+{% block forgetPassword %}
+<article class="content">
+    <div class="page-title">Square de récupération de mot de passe.</div>
+    <div class="img-page">
+        <div class="r-cadre-infos">
+            <div class="c-title">La récupération de mot de passe c'est par ici Daeva !</div>
+            <div class="c-desc">
+                Vous avez oublié votre mot de passe pour l'embarcadère de Rising ?</br>
+                Alors, merci de remplir les champs ci-dessous.
+            </div>
+        </div>
+        <section class="p-cont">
+            <div class="register-e">
+                <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+                    <label class="register-label-title" for="username"><center>{{ 'resetting.request.username'|trans({}, 'FOSUserBundle') }}</center></label>
+                    <div class="r-input">
+                        <input type="text" id="username" name="username" required="required" class="inner-register-input" />
+                    </div>
+                    <div>
+                        <input class="register-process" type="submit" value="Réinitialiser" />
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</article><!-- end .content -->	
+{% endblock %}

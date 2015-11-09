@@ -1,0 +1,72 @@
+site_rising_shop:
+    path:     /shop
+    defaults: { _controller: AionShopBundle:Item:shop }
+           
+arme:
+    path: /shop/Arme-PvP/{arme}
+    defaults: {_controller: AionShopBundle:Item:arme }
+    
+site_rising_page:
+    path: /shop/page/{id}
+    defaults: {_controller: AionShopBundle:Page:page }
+        
+emplacementStuffCuir:
+    path: /shop/Cuir/{type}
+    defaults: {_controller: AionShopBundle:Item:cuirEmpla }
+    
+emplacementStuffCuirMagique:
+    path: /shop/Cuir-Magique/{type}
+    defaults: {_controller: AionShopBundle:Item:cuirMagiqueEmpla }
+
+emplacementStuffTissu:
+    path: /shop/Tissu/{type}
+    defaults: {_controller: AionShopBundle:Item:tissuEmpla }
+    
+emplacementStuffMaille:
+    path: /shop/Maille/{type}
+    defaults: {_controller: AionShopBundle:Item:mailleEmpla }
+
+emplacementStuffMaillePhysique:
+    path: /shop/Maille-Physique/{type}
+    defaults: {_controller: AionShopBundle:Item:maillePhysiqueEmpla }
+    
+emplacementStuffPlate:
+    path: /shop/Plate/{type}
+    defaults: {_controller: AionShopBundle:Item:plateEmpla }
+    
+emplacementBijoux:
+    path: /shop/Bijoux/{bijoux}
+    defaults: {_controller: AionShopBundle:Item:bijoux }
+        
+emplacementEnchant:
+    path: /shop/Pierre-De-Mana/{enchant}
+    defaults: {_controller: AionShopBundle:Item:enchant}
+    
+nourriture:
+    path: /shop/Nourriture
+    defaults: {_controller: AionShopBundle:Item:nourriture}
+    
+familier:
+    path: /shop/Familiers
+    defaults: {_controller: AionShopBundle:Item:familiers}
+    
+monture:
+    path: /shop/Montures
+    defaults: {_controller: AionShopBundle:Item:montures}
+   
+emplacementAutre:
+    path: /shop/Autres/{autre}
+    defaults: {_controller: AionShopBundle:Item:autres}
+    
+ailes:
+    path: /shop/Ailes
+    defaults: {_controller: AionShopBundle:Item:ailes }
+    
+armePvE:
+    path: /shop/Armes-PvE/{arme}
+    defaults: {_controller: AionShopBundle:Item:armePvE }
+    
+acheter:
+    path: /shop/acheter/{item}/{perso}
+    defaults: {_controller: AionShopBundle:Achat:acheter}
+       

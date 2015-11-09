@@ -1,0 +1,9 @@
+<div class="m-cont">
+    <center>
+            <span class="w-message">Vous êtes connecté en tant que <span class="w-name">{{ user.username }}</span>.</span><br/>
+            Vous disposez de : <a href="#">{{ user.getCashShopMoney }}</a> <img src="{{ asset('bundles/siterisingaion/images/coin.png') }}"><br/>
+            <a href="{{ path('site_rising_shop') }}">Boutique Rising</a><br/>
+            <a href="{{ path('site_rising_userProfile') }}">Mon profil</a><br/>
+            <a href="{{ path('fos_user_security_logout') }}">Se deconnecter</a>
+    </center>
+</div>

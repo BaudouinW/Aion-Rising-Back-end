@@ -1,0 +1,7 @@
+parameters:
+#    aion_shop.example.class: SiteRising\AionShopBundle\Example
+
+services:
+#    aion_shop.example:
+#        class: %aion_shop.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

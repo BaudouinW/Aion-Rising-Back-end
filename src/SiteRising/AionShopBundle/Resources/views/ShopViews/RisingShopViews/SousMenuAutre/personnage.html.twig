@@ -1,0 +1,6 @@
+<select id="select-perso">
+    <option selected="selected" value="0">Choississez le personnage</option>
+ {% for perso in players %}
+    <option value="{{ perso.id }}">{{ perso.name }}</option>
+ {% endfor %}
+</select>

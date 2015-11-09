@@ -1,0 +1,20 @@
+{% extends 'SiteRisingAionBundle:AionViews:index.html.twig' %}
+
+{% block register %}			
+<article class="content">
+<div class="page-title">Square des inscriptions</div>
+        <div class="img-page">
+                <div class="r-cadre-infos">
+                        <div class="c-title">Les inscriptions c'est par ici Daeva !</div>
+                        <div class="c-desc">
+                            Vous souhaitez venir aux abords de l'embarcadère de Rising ?</br>
+                                Alors, merci de remplir les champs ci-dessous.
+                        </div>
+                </div>
+                <section class="p-cont">									
+                   {% include "SiteRisingAionBundle:AionViews:FormulaireInscription.html.twig" %}        
+                </section>
+        </div>
+
+</article><!-- end .content -->						
+{% endblock %}

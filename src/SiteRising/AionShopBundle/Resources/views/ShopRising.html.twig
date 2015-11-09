@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="content-style-type" content="text/css">
+        <meta property="og:title" content="Aion Rising - Serveur Privé Aion">
+        <meta name="revisit-after" content="5 Days">
+        <meta name="Description" content="Venez vivre des moments fabuleux grâce à notre serveur privé Aion ! On attend que vous !">
+        <meta name="Abstract" content="Venez vivre des moments fabuleux grâce à notre serveur privé Aion ! On attend que vous !">
+        <meta name="Keywords" content="Serveur, Aion, privé, français, francais, gratuit, free, mmorpg">
+        <meta name="author" content="TheNice">
+        <meta name="subject" content="Aion Serveur">
+        <meta name="Classification" content="Aion serveur gratuit">
+        <meta name="publisher" content="Aion-fr - www.aion-rising.fr">
+        <meta name="distribution" content="Global">
+        <meta name="resource-type" content="document">
+        <meta name="copyright" content="2012, 2014, Aion Rising, L'Equipe Aion Rising">
+        <meta name="robots" content="index, follow, all">
+        <meta name="identifier-url" content="http://www.aion-rising.fr">
+        <meta http-equiv="X-UA-Compatible" content="iE=EmulateiE7">
+  	{% block title %}<title>..::Aion Rising | Shop::..</title>{% endblock %}
+        <link href="{{ asset('bundles/aionshop/css/shop.css') }}" rel="stylesheet" type="text/css">
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+        <!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+        <!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+        <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+	{% javascripts '@SiteRisingAionBundle/Resources/public/js/jquery-1.9.1.min.js' %}<script src="{{ asset('http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js') }}"></script>{% endjavascripts %}
+<script type="text/javascript">
+
+var bind_shop = function()
+{
+	$('a button.btn-add').on('click', function(e){
+	e.stopPropagation();
+	e.preventDefault();
+	var href = $(this).parent().attr('href');
+	var selectVal = $('#select-perso').val();
+	if(selectVal == '0')
+		return false ;
+	href = href.substring(0, href.length - 1)  + selectVal;
+	window.location.href = href ;
+	});
+};
+$( document ).ready(function() {
+	bind_shop();
+});
+
+</script>
+    </head>
+
+    <body>
+        <div class="owner">
+            <div class="wrapper_in">
+                <div class="container">
+                    <div class="top-link">
+                        <nav>
+                            {% render(controller('AionShopBundle:User:infoCo')) %}
+                            <li class="link-follow"><a href="{{ path('site_rising_accueil') }}">Retour au site</a></li>
+                            <li class="logout"><a href="{{ path('fos_user_security_logout') }}">Deconnexion</a></li>
+                        </nav>
+                    </div>
+                    <header>
+                        <div class="btn-buy-rg">
+                            <a href="#" class="buy">acheter des rg</a>
+                        </div>
+                        <div class="btn-earn-rg">
+                            <a href="{{ path('site_rising_accueil')}}" class="earn-rg">gagner des rg</a>
+                        </div>
+                    </header>
+                    <div class="top-cont">
+                        <div class="menu">
+                            <nav class="menu-nav">
+                                <ul>
+                                    <li class="m-pvp"><a href="#">Item PvP</a>
+                                        <ul>
+                                            <li>
+                                                <ul>
+                                                   {% render(controller('AionShopBundle:Emplacement:sousMenuArme')) %}
+                                                </ul>
+                                                <a href="#" class="arrow-menu">Armes</a>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                    {% render(controller('AionShopBundle:Emplacement:sousMenuCuir')) %}
+                                                </ul>
+                                                <a href="#" class="arrow-menu">Cuir</a>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                   {% render(controller('AionShopBundle:Emplacement:sousMenuCuirMagique')) %}
+                                                </ul>
+                                                <a href="#" class="arrow-menu">Cuir-magique</a>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                   {% render(controller('AionShopBundle:Emplacement:sousMenuMaille')) %}
+                                                </ul>
+                                                <a href="#" class="arrow-menu">Maille</a>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                  {% render(controller('AionShopBundle:Emplacement:sousMenuMaillePhysique')) %}
+                                                </ul>
+                                                <a href="#" class="arrow-menu">Maille-physique</a>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                   {% render(controller('AionShopBundle:Emplacement:sousMenuTissu')) %}
+                                                </ul>
+                                                <a href="#" class="arrow-menu">Tissu</a>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                   {% render(controller('AionShopBundle:Emplacement:sousMenuPlate')) %}
+                                                </ul>
+                                                <a href="#" class="arrow-menu">Plate</a>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                   {% render(controller('AionShopBundle:Emplacement:sousMenuBijoux')) %}
+                                                </ul>
+                                                <a href="#" class="arrow-menu">Bijoux</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="m-pve"><a href="#">Item PvE</a>
+                                        <ul>
+                                            <li>
+                                                <ul>
+                                                   {% render(controller('AionShopBundle:Emplacement:sousMenuArmePvE')) %}
+                                                </ul>
+                                                <a href="#" class="arrow-menu">Armes</a>
+                                            </li>
+                                            <li><a href="{{ path('ailes') }}" >Ailes</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="m-enchant"><a href="#">Enchantements</a>
+                                        <ul>
+                                            <li>
+                                                <ul>
+                                                    {% render(controller('AionShopBundle:Emplacement:sousMenuEnchant')) %}
+                                                </ul>
+                                                <a href="#" class="arrow-menu">Pierre de mana</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="m-food"><a href="{{ path('nourriture') }}">Nourritures</a></li>
+                                    <li class="m-pet"><a href="{{ path('familier') }}">Familiers</a></li>
+                                    <li class="m-mount"><a href="{{ path('monture') }}">Montures</a></li>
+                                    <li class="m-other"><a href="#" >Autres</a>
+                                        <ul>
+                                           {% render(controller('AionShopBundle:Emplacement:sousMenuAutre')) %}
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="page-repeat">
+                        <div class="page-head">
+                            <div class="page-foot">
+                                <article class="content">
+                                {% block accueil %}
+                                {% endblock %}
+				{% block items %}
+                                {% endblock %}
+                                </article><!-- end .content -->
+                                <div class="clearfloat"></div>
+                            </div><!-- end .page-foot-->
+                        </div><!-- end .page-head-->
+                    </div><!-- end .page-repeat-->
+                    <div class="bottom-cont"></div>
+                    <footer role="contentinfo"></footer>
+                </div><!-- end .container -->
+            </div><!-- end .wrapper_in -->
+            <div class="footer">
+                <div class="footer_in">
+                    <div class="r-logo">
+                        <img src="{{ asset('bundles/aionshop/image/logo.png') }}">
+                    </div>
+                    <div class="w-logo">
+                        <img src="{{ asset('bundles/aionshop/image/c-thenice.png') }}">
+                    </div>
+                    <div class="footer-welcome">
+                        Bienvenue dans la boutique Rising ! Devenez un véritable héros en vous procurant des bienfaits de celle-ci. Partez à l'aventure avec nous dans ce MMORPG à l'action inégalée !
+                    </div>
+                    <div class="footer-link">
+                        <nav>
+                            <a href="">Aion Rising</a>   |   <a href="">Forum</a>  |  <a href="">Règles générales</a>  |  <a href="">Support</a>
+                        </nav>
+                    </div>
+                    <div class="footer-sep"></div>
+                    <div class="footer-copyright">
+                        Copyright © 2014 <span class="r-color">Aion Rising</span>. Touts droits réservés.<br/>
+                        Le site est présent à but éducatif et n'a aucune relation avec d'autres compagnies.<br/>
+                        Il est interdit de copier partiellement ou entièrement le site. Les images et les fonctionnalités présentes sont la propriété de <span class="r-color">Aion Rising</span>.
+                        <br/>
+                        Designed by <span class="r-color">TheNice</span> | Coded by <span class="r-color">Hatsuyo</span>.
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- end .owner -->
+    </body>
+</html>
